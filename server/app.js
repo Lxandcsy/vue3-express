@@ -17,7 +17,8 @@ const port = 3000
 app.listen(port, () => {
     console.log(`running on port http://localhost:${port}`);
 })
-// get请求，返回hello lx!
-app.get('/', (req, res) => {
-    res.send('Hello lx!')
-})
+
+// 导入路由
+import loginRouter from './router/login.js'
+app.use('/api', loginRouter)
+
