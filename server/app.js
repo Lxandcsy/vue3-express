@@ -10,7 +10,7 @@ import bodyParser from 'body-parser'
 app.use(bodyParser.json())
 // application/x-www-form-urlencoded
 // 当extended为false时，只会解析字符串或数组，true时，可以解析任意类型
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // 进行错误捕捉
 app.use((req, res, next) => {
@@ -37,14 +37,18 @@ app.use(jwt({
     path: [/^\/api\//]
 }))
 
+// 导入路由
+import loginRouter from './router/login.js'
+app.use('/api', loginRouter)
+
+// 对不符合joi规则的请求，返回400错误
+app.use((req, res, next) => {
+    if (err instanceof Joi.ValidationError) return res.cc(err)
+})
+
 // 设置默认端口
 const port = 3000
 // 监听端口
 app.listen(port, () => {
     console.log(`running on port http://localhost:${port}`);
 })
-
-// 导入路由
-import loginRouter from './router/login.js'
-app.use('/api', loginRouter)
-

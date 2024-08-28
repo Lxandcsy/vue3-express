@@ -1,6 +1,7 @@
 /**
  * 逻辑实现模块
  * 登录\注册
+ * 中间件: bcrypt.js, jsonwebtoken, jwt_config
  * 导出,供路由注册时调用
  */
 
@@ -17,7 +18,8 @@ import jwtConfig from '../jwt_config/jwt.js'
 export const register = (req, res) => {
     // 第一步判断前端数据是否合法
     const reginfo = req.body
-
+    console.log(reginfo);
+    
     if (!reginfo.account || !reginfo.password) {
         return res.send({
             status: 500,
@@ -25,7 +27,7 @@ export const register = (req, res) => {
         })
     }
     // 第二部判断用户是否存在
-    const querySql = "select * from users where account = ?"
+    const querySql = 'select * from users where account = ?'
     // 第一个参数时执行语句，第二个参数是查询条件，第三个参数是回调函数
     db.query(querySql, reginfo.account, (err, results) => {
         if (results.length > 0) {

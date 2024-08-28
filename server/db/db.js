@@ -8,7 +8,7 @@
  */
 
 // 导入mysql数据库
-import mysql from 'mysql'
+import mysql from 'mysql2'
 // 创建与数据库的连接
 const db = mysql.createPool({
     host: 'localhost',
@@ -16,5 +16,15 @@ const db = mysql.createPool({
     password: '123456',
     database: 'vue_express'
 })
+
+db.getConnection((err, connection) => {
+    if (err) {
+        console.error('Error connecting to the database:', err);
+        return;
+    }
+    console.log('Connected to the database successfully!');
+    // 释放连接回连接池
+    connection.release();
+});
 
 export default db
