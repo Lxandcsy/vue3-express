@@ -1,4 +1,12 @@
-// 登录注册模块路由
+/**
+ * 登录注册模块
+ * 路由注册
+ * 方法：post,get,put,delete......
+ * 路由：'/api'
+ * 请求参数：**
+ */
+
+
 // 导入express框架
 import express from 'express'
 // 使用express框架创建路由对象
