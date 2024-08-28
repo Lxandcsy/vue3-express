@@ -6,11 +6,11 @@ import cors from 'cors'
 app.use(cors())
 // 导入bodyParser，解析请求体，全局挂载
 import bodyParser from 'body-parser'
-// application/josn
+// application/json
 app.use(bodyParser.json())
 // application/x-www-form-urlencoded
 // 当extended为false时，只会解析字符串或数组，true时，可以解析任意类型
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // 进行错误捕捉
 app.use((req, res, next) => {

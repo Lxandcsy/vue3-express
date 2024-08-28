@@ -9,16 +9,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
     "@escook/express-joi": "^1.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "element-plus": "^2.8.1",
     "express": "^4.19.2",
     "express-jwt": "^8.4.1",
     "joi": "^17.4.0",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.11.0",
-    "vue": "^3.4.37"
+    "sass": "^1.77.8",
+    "sass-loader": "^16.0.1",
+    "style-loader": "^4.0.0",
+    "vue": "^3.4.37",
+    "vue-router": "^4.4.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",

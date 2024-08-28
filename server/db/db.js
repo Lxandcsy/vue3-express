@@ -17,14 +17,4 @@ const db = mysql.createPool({
     database: 'vue_express'
 })
 
-db.getConnection((err, connection) => {
-    if (err) {
-        console.error('Error connecting to the database:', err);
-        return;
-    }
-    console.log('Connected to the database successfully!');
-    // 释放连接回连接池
-    connection.release();
-});
-
 export default db
