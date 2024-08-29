@@ -3,9 +3,9 @@
  * 事件总线
  */
 import mitt from "mitt";
+// 实例化一个事件总线
 export const emitter = mitt()
 
-// 实例化一个事件总线
 // type Events = {
 //     foo: string;
 //     bar?: number;
