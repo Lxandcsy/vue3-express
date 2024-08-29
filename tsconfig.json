@@ -12,8 +12,22 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
-    "typeRoots": ["node_modules/@types", "src/types"]
+    "typeRoots": [
+      "node_modules/@types",
+      "src/types"
+    ],
+    "baseUrl": "./src", // 基础目录，所有相对路径的起点
+    "paths": {
+      "@/*": [
+        "*"
+      ] // 将 @ 符号映射到 src 目录
+    }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "build"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
 }

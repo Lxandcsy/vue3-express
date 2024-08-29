@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,6 +21,11 @@ export default defineConfig({
     port: 5050,
     open: true,
     cors: true
+  },
+  resolve: {
+    alias: {
+      '@': '/src' // 设置 @ 别名指向 src 目录
+    }
   }
 })
 
